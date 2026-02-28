@@ -30,6 +30,32 @@
 
 ## 0. 准备工作
 
+### 可选：一键脚本（自动化安装 + 配置）
+
+如果你想尽量自动化完成安装与配置（OpenAI 主模型 + OpenRouter fallback + Telegram），可直接用脚本：
+
+- `scripts/bootstrap-mac-mini-openclaw.sh`
+
+用法：
+
+```bash
+cd mac-mini-openclaw-setup
+
+# 先准备好 3 个环境变量（不要写进 git）
+export OPENAI_API_KEY="<...>"
+export OPENROUTER_API_KEY="<...>"
+export TELEGRAM_BOT_TOKEN="<...>"
+
+./scripts/bootstrap-mac-mini-openclaw.sh
+```
+
+脚本会把密钥写到 `~/.openclaw/.env`（权限 600），并将默认模型设置为：
+- primary: `openai/gpt-5.2`
+- fallback: `openrouter/minimax/minimax-m2.5`
+
+> 注意：Xcode CLT 的首次安装会弹 GUI 安装器，这一步无法完全无交互。
+
+
 你需要：
 
 - 一台全新 Mac mini（Apple Silicon 或 Intel 都可）

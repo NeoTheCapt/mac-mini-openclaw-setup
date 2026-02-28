@@ -151,12 +151,14 @@ openclaw help
 openclaw onboard --install-daemon
 ```
 
-这一步通常会：
+这一步会按向导配置关键项（建议选 QuickStart 先跑通）：
 
-- 初始化 `~/.openclaw/`（state dir）
-- 创建 `~/.openclaw/openclaw.json`（配置）
-- 创建 `~/.openclaw/workspace/`（工作区）
-- 安装并启动本地 Gateway daemon（macOS 下通常是 launchd/service）
+- **Model/Auth（模型与密钥）**：选择 OpenAI / Anthropic / OpenRouter 或自定义兼容提供商，并录入 API key
+  - 建议用“secret reference”/环境变量方式保存密钥（不要硬写进文档或 git）
+- **Workspace**：默认 `~/.openclaw/workspace/`
+- **Gateway**：默认端口 18789，loopback 绑定 + token auth
+- **Channels（可选）**：也可以在这里直接配置 Telegram（后面第 8 节也给了手工配置方式）
+- **Daemon**：macOS 下安装并启动 LaunchAgent（让 Gateway 常驻）
 
 完成后检查：
 

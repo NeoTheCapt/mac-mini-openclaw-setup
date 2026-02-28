@@ -34,19 +34,40 @@
 
 如果你想尽量自动化完成安装与配置（OpenAI 主模型 + OpenRouter fallback + Telegram），可直接用脚本：
 
-- `scripts/bootstrap-mac-mini-openclaw.sh`
+- 脚本文件：[`scripts/bootstrap-mac-mini-openclaw.sh`](scripts/bootstrap-mac-mini-openclaw.sh)
 
-用法：
+### 下载方式（两选一）
+
+**方式 A：git clone（推荐）**
 
 ```bash
+git clone https://github.com/NeoTheCapt/mac-mini-openclaw-setup.git
 cd mac-mini-openclaw-setup
+```
 
-# 先准备好 3 个环境变量（不要写进 git）
+**方式 B：只下载脚本（curl）**
+
+```bash
+curl -fsSL \
+  https://raw.githubusercontent.com/NeoTheCapt/mac-mini-openclaw-setup/main/scripts/bootstrap-mac-mini-openclaw.sh \
+  -o bootstrap-mac-mini-openclaw.sh
+chmod +x bootstrap-mac-mini-openclaw.sh
+```
+
+### 运行
+
+> 先准备好 3 个环境变量（不要写进 git / 不要写进 shell 历史，建议用密码管理器复制粘贴）
+
+```bash
 export OPENAI_API_KEY="<...>"
 export OPENROUTER_API_KEY="<...>"
 export TELEGRAM_BOT_TOKEN="<...>"
 
+# 如果你是方式 A（clone）：
 ./scripts/bootstrap-mac-mini-openclaw.sh
+
+# 如果你是方式 B（curl）：
+./bootstrap-mac-mini-openclaw.sh
 ```
 
 脚本会把密钥写到 `~/.openclaw/.env`（权限 600），并将默认模型设置为：

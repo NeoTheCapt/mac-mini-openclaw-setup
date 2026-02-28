@@ -24,6 +24,7 @@
 - [8. 配置 OpenClaw 的 Telegram Channel](#8-配置-openclaw-的-telegram-channel)
 - [9. Telegram DM 配对（pairing approve）](#9-telegram-dm-配对pairing-approve)
 - [10. 常见故障排查](#10-常见故障排查)
+- [附录：Anthropic（Claude）认证配置](#附录anthropicclaude认证配置)
 
 ---
 
@@ -289,6 +290,10 @@ echo $PATH
 - 让 bot 变成管理员，或移出群再加回
 
 ---
+
+## 附录：Anthropic（Claude）认证配置
+
+- 详见：[`docs/02-anthropic-auth.md`](docs/02-anthropic-auth.md)
 
 ## License
 
